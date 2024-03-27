@@ -1,0 +1,304 @@
+//		UserRole userRole1 = new UserRole();
+//		userRole1.setRoleName("Viewer");
+//		UserRole userRole2 = new UserRole();
+//		userRole2.setRoleName("Staff");
+//		UserRole userRole3 = new UserRole();
+//		userRole3.setRoleName("Admin");
+//		
+//		entityManager.persist(userRole1);
+//		entityManager.persist(userRole2);
+//		entityManager.persist(userRole3);
+//		
+//		Users MinhNhut = new Users();
+//		MinhNhut.setEmail("minhnhut@gmail.com");
+//		MinhNhut.setPassword("1");
+//		MinhNhut.setRole(entityManager.find(UserRole.class, 3L));
+//		MinhNhut.setUsername("minhnhut");
+//		MinhNhut.setName("Hồ Minh Nhựt");
+//		Users DucTien = new Users();
+//		DucTien.setEmail("ductien@gmail.com");
+//		DucTien.setPassword("1");
+//		DucTien.setRole(entityManager.find(UserRole.class, 3L));
+//		DucTien.setUsername("ductien");
+//		DucTien.setName("Đinh Tăng Đức Tiến");
+//		Users HaoNam = new Users();
+//		HaoNam.setEmail("haonam@gmail.com");
+//		HaoNam.setPassword("1");
+//		HaoNam.setRole(entityManager.find(UserRole.class, 3L));
+//		HaoNam.setUsername("haonam");
+//		HaoNam.setName("Huỳnh Hạo Nam");
+//		
+//		Users AnhTai = new Users();
+//		AnhTai.setEmail("anhtai@gmail.com");
+//		AnhTai.setPassword("1");
+//		AnhTai.setRole(entityManager.find(UserRole.class, 3L));
+//		AnhTai.setUsername("anhtai");
+//		AnhTai.setName("Nguyễn Anh Tài");
+//		
+//		entityManager.persist(MinhNhut);
+//		entityManager.persist(DucTien);
+//		entityManager.persist(HaoNam);
+//		entityManager.persist(AnhTai);
+		
+//		Genre genre1 = new Genre();
+//		genre1.setName("Hành Động");
+//		Genre genre2 = new Genre();
+//		genre2.setName("Kinh Dị");
+//		Genre genre3 = new Genre();
+//		genre3.setName("Hài Hước");
+//		Genre genre4 = new Genre();
+//		genre4.setName("Tình Cảm");
+//		Genre genre5 = new Genre();
+//		genre5.setName("Phiêu Lưu");
+//		Genre genre6 = new Genre();
+//		genre6.setName("Hoạt Hình");
+//		Genre genre7 = new Genre();
+//		genre7.setName("Khoa Học Viễn Tưởng");
+//		Genre genre8 = new Genre();
+//		genre8.setName("Hồi Hộp");
+//		Genre genre9 = new Genre();
+//		genre9.setName("Tâm Lý");
+//		Genre genre10 = new Genre();
+//		genre10.setName("Thần Thoại");
+//		Genre genre11 = new Genre();
+//		genre11.setName("Tội Phạm");
+//		Genre genre12 = new Genre();
+//		genre12.setName("Chiến Tranh");
+//		entityManager.persist(genre1);
+//		entityManager.persist(genre2);
+//		entityManager.persist(genre3);
+//		entityManager.persist(genre4);
+//		entityManager.persist(genre5);
+//		entityManager.persist(genre6);
+//		entityManager.persist(genre7);
+//		entityManager.persist(genre8);
+//		entityManager.persist(genre9);
+//		entityManager.persist(genre10);
+//		entityManager.persist(genre11);
+//		entityManager.persist(genre12);
+		
+//		Genre action = entityManager.find(Genre.class, 1l);	
+----------------Them Dien Vien------------------
+//		Actor ChrisPratt = new Actor("Chris Pratt", null, "Mỹ", true, Date.valueOf("1979-06-21"));
+//		Actor ZoeSaldana = new Actor("Zoe Saldana", null, "Mỹ", false, Date.valueOf("1978-06-19"));
+//		Actor DaveBautista = new Actor("Dave Bautista", null, "Mỹ", true, Date.valueOf("1969-01-18"));
+//		Actor VinDieSel = new Actor("Vin Diesel", null, "Mỹ", true, Date.valueOf("1967-07-18"));
+//		Actor BradleyCooper = new Actor("Bradley Cooper", null, "Mỹ", true, Date.valueOf("1975-01-05"));
+//		entityManager.persist(ChrisPratt);
+//		entityManager.persist(ZoeSaldana);
+//		entityManager.persist(BradleyCooper);
+//		entityManager.persist(DaveBautista);
+//		entityManager.persist(VinDieSel);
+//		
+
+------------Tao mang dien vien-----------------
+//		List<Actor> listActor = new ArrayList<Actor>();
+----------Lay Dien Vien tu Khoa Chinh-----------------
+//		listActor.add(entityManager.find(Actor.class, 1L));
+//		listActor.add(entityManager.find(Actor.class, 2L));
+//		listActor.add(entityManager.find(Actor.class, 3L));
+//		listActor.add(entityManager.find(Actor.class, 4L));
+//		listActor.add(entityManager.find(Actor.class, 5L));
+//		Movie movie1 = new Movie();
+----------Them Danh Sach dien Vien vAo-----------------
+//		movie1.setActors(listActor);
+//		movie1.setDes("Vệ Binh Dải Ngân Hà Vol.tiếp tục cuộc phiêu lưu của nhóm Vệ Binh Dải Ngân Hà trong không gian vũ trụ rộng lớn. Dưới sự chỉ đạo của đạo diễn James Gunn, bộ phim hứa hẹn mang đến một cuộc hành trình mới đầy kịch tính, hài hước và đầy cảm xúc.\n"
+//		        + "\n"
+//		        + "Trong phần này, nhóm Vệ Binh Dải Ngân Hà sẽ phải đối mặt với những thách thức mới, gặp gỡ những nhân vật mới và khám phá những bí ẩn chưa được tiết lộ từ quá khứ của mỗi thành viên. Đồng thời, họ cũng sẽ phải đoàn kết và chiến đấu chống lại các mối đe dọa nguy hiểm nhằm bảo vệ vũ trụ khỏi sự tàn phá.");
+//		movie1.setDirector("James Gunn");
+//		movie1.setDuration(149);
+//		movie1.setGenre(action);
+//		movie1.setRating(9.3);
+//		movie1.setReleaseYear(Date.valueOf("2023-05-03"));
+//		movie1.setSource("https://www.youtube.com/embed/cfbKqpbdrYg");
+//		movie1.setTitle("Vệ Binh Dải Ngân Hà 3");
+//		entityManager.persist(movie1);
+
+		Genre action = entityManager.find(Genre.class, 1l);
+		
+		Actor KeanuReeves = new Actor();
+		KeanuReeves.setName("Keanu Reeves");
+		KeanuReeves.setNationality(" Canada ");
+		KeanuReeves.setSex(true);
+		KeanuReeves.setBirth(Date.valueOf("1964-02-04"));
+		KeanuReeves.setSrcImg("https://cinema.momocdn.net/img/79002769474964987-4D0PpNI0kmP58hgrwGC3wCjxhnm.jpg");
+		KeanuReeves.setMovies(null);
+		
+		entityManager.persist(KeanuReeves);
+		 
+		 Genre action1 = entityManager.find(Genre.class,1l);
+		  
+		 Actor DonnieYen = new Actor();
+		 DonnieYen.setName("Donnie Yen");
+		 DonnieYen.setNationality("Trung Quốc");
+		 DonnieYen.setSex(true);
+		 DonnieYen.setBirth(Date.valueOf("1963-07-27"));
+		 DonnieYen.setSrcImg("https://cinema.momocdn.net/img/79002769917894916-hTlhrrZMj8hZVvD17j4KyAFWBHc.jpg");
+		 DonnieYen.setMovies(null);
+         
+         entityManager.persist(DonnieYen);
+		
+         Genre action2 = entityManager.find(Genre.class,1l);
+		  
+		 Actor BillSkarsgård = new Actor();
+		 BillSkarsgård.setName("Bill Skarsgård");
+		 BillSkarsgård.setNationality("Thụy Điển");
+		 BillSkarsgård.setSex(true);
+		 BillSkarsgård.setBirth(Date.valueOf("1990-08-09"));
+		 BillSkarsgård.setSrcImg("https://cinema.momocdn.net/img/79002769981606501-6OCBeTRLXrNKqvSz4HIweUWSIn6.jpg");
+		 BillSkarsgård.setMovies(null);
+         
+         entityManager.persist(BillSkarsgård);
+         
+         Genre action3 = entityManager.find(Genre.class,1l);
+		  
+		 Actor LaurenceFishburne = new Actor();
+		 LaurenceFishburne.setName("Laurence Fishburne");
+		 LaurenceFishburne.setNationality("Mỹ");
+		 LaurenceFishburne.setSex(true);
+		 LaurenceFishburne.setBirth(Date.valueOf("1961-07-30"));
+		 LaurenceFishburne.setSrcImg("https://cinema.momocdn.net/img/79002770011391987-8suOhUmPbfKqDQ17jQ1Gy0mI3P4.jpg");
+		 LaurenceFishburne.setMovies(null);
+         
+         entityManager.persist(LaurenceFishburne);
+         
+         Genre action4 = entityManager.find(Genre.class,1l);
+		  
+		 Actor HiroyukiSanada = new Actor();
+		 HiroyukiSanada.setName("Hiroyuki Sanada");
+		 HiroyukiSanada.setNationality("Nhật Bản");
+		 HiroyukiSanada.setSex(true);
+		 HiroyukiSanada.setBirth(Date.valueOf("1960-10-12"));
+		 HiroyukiSanada.setSrcImg("https://cinema.momocdn.net/img/79002770113594850-x6QHfdTvuuOclypoPqtdqQmlaGW.jpg");
+		 HiroyukiSanada.setMovies(null);
+         
+         entityManager.persist(HiroyukiSanada);
+         
+         Genre action5 = entityManager.find(Genre.class,1l);
+		  
+		 Actor ShamierAnderson = new Actor();
+		 ShamierAnderson.setName("Shamier Anderson");
+		 ShamierAnderson.setNationality("Canada ");
+		 ShamierAnderson.setSex(true);
+		 ShamierAnderson.setBirth(Date.valueOf("1991-05-06"));
+		 ShamierAnderson.setSrcImg("https://cinema.momocdn.net/img/79002770147706762-vUlPZ1owT67BOQwpIn96ZFjBxg2.jpg");
+		 ShamierAnderson.setMovies(null);
+         
+         entityManager.persist(ShamierAnderson);
+         
+        	Genre action6 =entityManager.find(Genre.class, 1l);
+		 
+		Actor JacobBenjaminGyllenhaal = new Actor();
+		
+		JacobBenjaminGyllenhaal.setName("  Jacob Benjamin Gyllenhaal");
+		JacobBenjaminGyllenhaal.setNationality(" Mỹ");
+		JacobBenjaminGyllenhaal.setSex(true);
+	    JacobBenjaminGyllenhaal.setBirth(Date.valueOf("1980-12-19"));
+	    JacobBenjaminGyllenhaal.setSrcImg("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Jake_Gyllenhaal_2019_by_Glenn_Francis.jpg/440px-Jake_Gyllenhaal_2019_by_Glenn_Francis.jpg");
+	    JacobBenjaminGyllenhaal.setMovies(null);
+	   
+	    entityManager.persist(JacobBenjaminGyllenhaal);
+	    
+	    Genre action7 =entityManager.find(Genre.class, 1l);
+		 
+		Actor  AlexanderLudwig = new Actor();
+		
+		AlexanderLudwig.setName("Alexander Ludwig");
+		AlexanderLudwig.setNationality("canada");
+		AlexanderLudwig.setSex(true);
+		AlexanderLudwig.setBirth(Date.valueOf("1992-05-07"));
+		AlexanderLudwig.setSrcImg("https://upload.wikimedia.org/wikipedia/commons/8/83/Alexander_Ludwig_%28Cropped%29.jpg ");
+		AlexanderLudwig.setMovies(null);
+	   
+	    entityManager.persist(AlexanderLudwig);
+	    
+	    Genre action8 =	entityManager.find(Genre.class, 1l);
+		 
+		Actor  AntonyStarr = new Actor();
+		
+		AntonyStarr.setName("Antony Starr");
+		AntonyStarr.setNationality("New Zealand");
+		AntonyStarr.setSex(true);
+		AntonyStarr.setBirth(Date.valueOf("1975-10-25"));
+		AntonyStarr.setSrcImg("https://upload.wikimedia.org/wikipedia/commons/6/63/Antony_Starr_%28cropped%29.jpg");
+		AntonyStarr.setMovies(null);
+	   
+	    entityManager.persist(AntonyStarr);
+	    
+	    Genre action9 = entityManager.find(Genre.class, 2l);
+	    Actor ChoiMinSik = new Actor();
+	    ChoiMinSik.setName("Choi Min Sik");
+	    ChoiMinSik.setNationality("Hàn Quốc");
+	    ChoiMinSik.setSex(true);
+	    ChoiMinSik.setBirth(Date.valueOf("1962-04-27"));
+	    ChoiMinSik.setSrcImg("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Choi_Min-sik.jpg/440px-Choi_Min-sik.jpg");
+	    ChoiMinSik.setMovies(null);
+	    
+	    entityManager.persist(ChoiMinSik);
+	    
+	    Genre action10 = entityManager.find(Genre.class, 2l);
+	    Actor YooHaiJin = new Actor();
+	    YooHaiJin.setName("Yoo Hai Jin");
+	    YooHaiJin.setNationality("Hàn Quốc");
+	    YooHaiJin.setSex(true);
+	    YooHaiJin.setBirth(Date.valueOf("1970-01-04"));
+	    YooHaiJin.setSrcImg("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKKnPDCDs1mCAMYYh_ZYfcJnH8KnXYdmnfmn-QHONz5bw-FzF5oDa1&usqp=CAE&s");
+	    YooHaiJin.setMovies(null);
+	    
+	    entityManager.persist(YooHaiJin);
+	    
+	    Genre action11 = entityManager.find(Genre.class, 2l);
+	    Actor KimGoEun = new Actor();
+	    KimGoEun.setName("Kim Go Eun");
+	    KimGoEun.setNationality("Hàn Quốc");
+	    KimGoEun.setSex(false);
+	    KimGoEun.setBirth(Date.valueOf("1991-07-02"));
+	    KimGoEun.setSrcImg("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/20230906_Kim_Go-eun_04.jpg/440px-20230906_Kim_Go-eun_04.jpg");
+	    KimGoEun.setMovies(null);
+	    
+	    entityManager.persist(KimGoEun);
+	    
+	    Genre action12 = entityManager.find(Genre.class, 2l);
+	    Actor LeeDoHyun = new Actor();
+	    LeeDoHyun.setName("Kim Go Eun");
+	    LeeDoHyun.setNationality("Hàn Quốc");
+	    LeeDoHyun.setSex(true);
+	    LeeDoHyun.setBirth(Date.valueOf("1995-04-11"));
+	    LeeDoHyun.setSrcImg("https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/230315_Lee_Do-hyun_%28%EC%9D%B4%EB%8F%84%ED%98%84%29.jpg/500px-230315_Lee_Do-hyun_%28%EC%9D%B4%EB%8F%84%ED%98%84%29.jpg");
+	    LeeDoHyun.setMovies(null);
+	    
+	    entityManager.persist(LeeDoHyun);
+         
+         
+         
+         List<Actor> listActor = new ArrayList<Actor>();
+		
+		 listActor.add(entityManager.find(Actor.class, 1l));
+		 listActor.add(entityManager.find(Actor.class, 2l));
+		 listActor.add(entityManager.find(Actor.class, 3l));
+		 listActor.add(entityManager.find(Actor.class, 4l));
+		 listActor.add(entityManager.find(Actor.class, 5l));
+		 listActor.add(entityManager.find(Actor.class, 6l));
+		 
+		 
+		 
+		 
+		Genre g2 = entityManager.find(Genre.class, 1l);
+          
+	   Movie m2 = new Movie();
+	   m2.setTitle("Sát Thủ John Wick 4"); // Ten Phim
+	   m2.setDes("Với cái giá phải trả ngày càng tăng, John Wick tham gia cuộc chiến chống lại High Table trên toàn cầu khi tìm kiếm những người chơi quyền lực nhất trong thế giới ngầm, từ New York qua Paris, Osaka đến cả Berlin");
+	   // Mo Ta Phim,
+	   
+	   m2.setDirector("Chad Stahelski"); // Dao Dien . Vi du: movie1.setDirector("James Gunn");
+	   m2.setDuration(130); // Thoi Luong Phim Vi du : movie1.setDuration(149);
+	   m2.setGenre(g2); // The loai phim
+	   m2.setRating(9.0); // So Sao danh gia . Vi du : movie1.setRating(9.3);
+	   m2.setActors(listActor); // Danh Sach Dien Vien
+	   m2.setReleaseYear(Date.valueOf("2023-03-24")); // Ngay Thang Nam ra mat phim. Vi du: movie1.setReleaseYear(Date.valueOf("2023-05-03"));
+	   m2.setSource("https://www.youtube.com/embed/27EF723ZDmI "); // Set Duong` Dan Phim vi du https://www.youtube.com/embed/cfbKqpbdrYg
+	   m2.setSrcImg("https://cinema.momocdn.net/img/79002770228187753-jPJfq3s7UybktndveSbhwsReYqH.jpg"); // Set Duong` Dan Anh? 
+	   m2.setVisit(0); // Luot Xem , mac dinh cho la` 0
+	   
+	   entityManager.persist(m2);
+	   
