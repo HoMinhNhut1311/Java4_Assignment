@@ -28,5 +28,4 @@ public class Genre_Service {
 		System.out.println(asmUtils.callAPI_List(urlApi, Genre.class,"get"));
 		return asmUtils.callAPI_List(urlApi, Genre.class,"get");
 	}
-
 }

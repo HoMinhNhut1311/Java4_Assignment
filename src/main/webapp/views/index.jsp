@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <!-- font-awesome cdn link  -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <title>Advanced Level Movies Website</title>
 </head>
 
@@ -30,7 +30,7 @@
 	Users user = (Users) session.getAttribute("user");
 	Genre_Service genre_Service = new Genre_Service();
 	List<Genre> listGenre = genre_Service.getallMovie(request);
-    Movie_Service ms = new Movie_Service();
+    Movie_Service ms = new Movie_Service();	
     Movie topView = ms.getTopView(request);
 %>
     <header style="background-image: url('<%= topView.getSrcImg() %>');">
@@ -122,35 +122,89 @@
         <li><a href="#"> Tralier <span></span></a></li>
     </div>
     <div class="cato_bx cato_bx2">
+    
         <div class="left_cato">
-            <button>Sort by:</button>
-            <button id="all_btn">All</button>
-            <button id="latest_btn">Latest</button>
-            <button id="year">Year <i class="fas fa-angle-down" ></i>
-            <div class="year_bx">
-                <li id="year2022__btn">2022</li>
-                <li id="year2021__btn">2021</li>
-                <li id="year2020__btn">2020</li>
-                <li>2019</li>
-                <li>2018</li>
-                <li>2017</li>
-                <li>2016</li>
-                <li>2015</li>
-                <li>2014</li>
-            </div>
-            </button>
-            <button id="a_z">A-Z <i class="fas fa-angle-down" ></i>
-                <div class="year_bx letter_bx">
-                    <li id="letter_a_btn">A</li>
-                    <li id="letter_b_btn">B</li>
-                    <li>C</li>
-                    <li>E</li>
-                    <li>F</li>
-                    <li>G</li>
-                    <li>H</li>
-                    <li id="letter_t_btn">T</li>
-                    <li>Z</li>
-                </div></button>
+         	<Span class="me-2">Sắp xếp theo</Span>
+         	
+         	<!-- Đánh Giá -->
+			<div class="btn-group vote">
+			  <button type="button" class="btn btn-outline-success bg-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+			    Đánh Giá
+			  </button>
+			  <ul class="dropdown-menu">
+			    <li class="bg-danger"><a class="dropdown-item" href="#">Thấp Nhất</a></li>
+			    <li><hr class="dropdown-divider"></li>
+			    
+			    <li><a class="dropdown-item" href="#">1 - 2 Sao</a></li>
+			    <li><a class="dropdown-item" href="#">2 - 4 Sao</a></li>
+			    <li><a class="dropdown-item" href="#">4 - 6 Sao</a></li>
+			    <li><a class="dropdown-item" href="#">8 - 10 Sao</a></li>
+			    
+			    <li><hr class="dropdown-divider"></li>
+			    <li class="bg-success"><a class="dropdown-item" href="#">Cao Nhất</a></li>
+			  </ul>
+			</div>
+			
+			<!-- Thời gian bộ phim -->
+			<div class="btn-group duration">
+			  <button type="button" class="btn btn-outline-success bg-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+			    Thời Lượng
+			  </button>
+			  <ul class="dropdown-menu">
+			    <li class="bg-danger"><a class="dropdown-item" href="#">Thấp Nhất</a></li>
+			    <li><hr class="dropdown-divider"></li>
+			    
+			    <li><a class="dropdown-item" href="#">50 - 70 phút</a></li>
+			    <li><a class="dropdown-item" href="#">70 - 90 phút</a></li>
+			    <li><a class="dropdown-item" href="#">90  - 120 phút</a></li>
+			    <li><a class="dropdown-item" href="#">120 - 180 phút</a></li>
+			    
+			    <li><hr class="dropdown-divider"></li>
+			    <li class="bg-success"><a class="dropdown-item" href="#">Cao Nhất</a></li>
+			  </ul>
+			</div>
+			
+			<!-- Lượt xem -->
+			<div class="btn-group view">
+			  <button type="button" class="btn btn-outline-success bg-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+			    Thời Lượng
+			  </button>
+			  <ul class="dropdown-menu">
+			    <li class="bg-danger"><a class="dropdown-item" href="#">Thấp Nhất</a></li>
+			    <li><hr class="dropdown-divider"></li>
+			    
+			    <li><a class="dropdown-item" href="">1 - 10 lượt xem</a></li>
+			    <li><a class="dropdown-item" href="#">10 - 100 lượt xem</a></li>
+			    <li><a class="dropdown-item" href="#">100 - 300 lượt xem</a></li>
+			    <li><a class="dropdown-item" href="#">300 - 500 lượt xem</a></li>
+			    <li><a class="dropdown-item" href="#">500 lượt xem trở lên</a></li>
+			    
+			    <li><hr class="dropdown-divider"></li>
+			    <li class="bg-success"><a class="dropdown-item" href="#">Cao Nhất</a></li>
+			  </ul>
+			</div>
+			
+			<!-- Ngày Ra Mắt -->
+			<div class="btn-group release">
+			  <button type="button" class="btn btn-outline-success bg-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+			    Thời gian ra mắt
+			  </button>
+			  <ul class="dropdown-menu">
+			    <li class="bg-danger"><a class="dropdown-item" href="#">Thấp Nhất</a></li>
+			    <li><hr class="dropdown-divider"></li>
+			    
+			    <li><a class="dropdown-item" href="#">Trước Năm 2010</a></li>
+			    <li><a class="dropdown-item" href="#">Trước Năm 2014</a></li>
+			    <li><a class="dropdown-item" href="#">Trước Năm 2018</a></li>
+			    <li><a class="dropdown-item" href="#">Trước Năm 2022</a></li>
+			    <li><a class="dropdown-item" href="#">Sau Năm 2022</a></li>
+			    
+			    <li><hr class="dropdown-divider"></li>
+			    <li class="bg-success"><a class="dropdown-item" href="#">Cao Nhất</a></li>
+			  </ul>
+			</div>
+         	
+         	
         </div>
         <div class="right_cato">
             <i class="fas fa-star"></i>
@@ -174,6 +228,8 @@
         <div class="rate_change" id="rate8"></div>
     </div>
     
+  <!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   
 </body>
 
