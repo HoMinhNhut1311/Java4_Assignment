@@ -10,6 +10,10 @@ public class MovieUtils {
 	static final String getTopMovie_JPQL = "SELECT m FROM Movie m ORDER BY m.visit DESC";
 	static final String getMoviebyID = "Select m FROM Movie m where m.id = :id";
 
+	public Movie addMovie(Movie movie) {
+		movieI_Imp.add(movie);
+		return movie;
+	}
 	
 	public List<Movie> getallMovie() {
 		return movieI_Imp.getAll();

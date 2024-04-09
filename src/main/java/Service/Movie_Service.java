@@ -11,6 +11,13 @@ public class Movie_Service {
 	AsmUtils<Movie> asmUtils = new AsmUtils<Movie>();
 	static String source = "https://www.youtube.com/embed/cfbKqpbdrYg";
 	
+	public Movie addMovie(HttpServletRequest request,Movie movie) {
+		String urlApi = "http://localhost:8080/"+contextPath.getContextpath()+"/api/movie/add";
+		System.out.println(request.getAttribute("movie"));
+		asmUtils.callCrud(request, urlApi, "post");
+		return movie;
+	}
+	
 	public List<Movie> getallMovie(HttpServletRequest request) {
 		String urlApi = "http://localhost:8080/"+contextPath.getContextpath()+"/api/movie/getall";
 		return asmUtils.callAPI_List(urlApi, Movie.class, "get");

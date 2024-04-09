@@ -33,7 +33,7 @@ QueryUtil<Actor> queryUtil = new QueryUtil<Actor>();
 	@Override
 	public List<Actor> getAll() throws DataBindingException {
 		// TODO Auto-generated method stub
-		return null;
+		return queryUtil.executeQueryList("Select a from Actor a");
 	}
 
 	@Override

@@ -46,6 +46,34 @@ public class apiMovie extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		String action = req.getPathInfo().substring(1);
+		System.out.println("post/"+action);
+		switch (action) {
+		case "add":
+			 // Kiểm tra yêu cầu có chứa dữ liệu JSON không
+		    String contentType = req.getContentType();
+		    if (contentType != null && contentType.contains("application/json")) {
+		        // Đọc dữ liệu JSON từ body của yêu cầu
+		        ObjectMapper mapper = new ObjectMapper();
+		        Movie movie = mapper.readValue(req.getInputStream(), Movie.class);
+		        // Thực hiện các thao tác cần thiết với đối tượng Movie
+		        // Ví dụ: Thêm đối tượng Movie vào cơ sở dữ liệu
+		        movieUtils.addMovie(movie);
+
+		        // Trả về phản hồi cho client
+		        resp.setStatus(HttpServletResponse.SC_CREATED); // Hoặc mã phản hồi khác tùy vào kết quả xử lý
+		    } else {
+		        // Trả về phản hồi lỗi nếu yêu cầu không chứa dữ liệu JSON
+		        resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+		    }
+		    break;
+		case "delete":
+			
+			break;
+
+		default:
+			break;
+		}
 	}
+	
 }

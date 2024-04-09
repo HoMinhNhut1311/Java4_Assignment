@@ -22,13 +22,14 @@ public class Actor {
     private String name;
     
     @JsonIgnoreProperties("actors")
-    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
-            name = "movie_actor",
-            joinColumns = @JoinColumn(name = "actor_id"),
-            inverseJoinColumns = @JoinColumn(name = "movie_id")
+        name = "movie_actor",
+        joinColumns = @JoinColumn(name = "actor_id"),
+        inverseJoinColumns = @JoinColumn(name = "movie_id")
     )
     private Set<Movie> movies;
+
 
     private String srcImg;
     

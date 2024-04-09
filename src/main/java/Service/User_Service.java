@@ -40,7 +40,6 @@ public class User_Service{
 	public Users logIn(HttpServletRequest req,String userName,String password) {
 		String urlApi ="http://localhost:8080/" +req.getContextPath()+"/api/login?username="+userName + "&password="+password;
 		return asmUtils.callAPI_Obj(urlApi, Users.class,"POST");
-		
 	}
 	
 	public static void main(String[] args) {

@@ -36,11 +36,11 @@ public class Movie {
     
     private int visit;
     
-    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
-            name = "movie_actor",
-            joinColumns = @JoinColumn(name = "movie_id"),
-            inverseJoinColumns = @JoinColumn(name = "actor_id")
+        name = "movie_actor",
+        joinColumns = @JoinColumn(name = "movie_id"),
+        inverseJoinColumns = @JoinColumn(name = "actor_id")
     )
     private List<Actor> actors;
 
@@ -67,8 +67,26 @@ public class Movie {
     public void setDes(String des) {
 		this.des = des;
 	}
+    public Movie() {
+		// TODO Auto-generated constructor stub
+	}
     
-   public void setSourceTrailer(String sourceTrailer) {
+   public Movie(String title, Genre genre, String director, String des, String srcImg, List<Actor> actors,
+			int duration, Date releaseYear, double rating, String sourceTrailer, String sourceWatch) {
+		this.id = 0;
+		this.title = title;
+		this.genre = genre;
+		this.director = director;
+		this.des = des;
+		this.srcImg = srcImg;
+		this.actors = actors;
+		this.duration = duration;
+		this.releaseYear = releaseYear;
+		this.rating = rating;
+		this.sourceTrailer = sourceTrailer;
+		this.sourceWatch = sourceWatch;
+	}
+public void setSourceTrailer(String sourceTrailer) {
 	this.sourceTrailer = sourceTrailer;
 }
    public String getSourceTrailer() {

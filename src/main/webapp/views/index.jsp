@@ -29,7 +29,7 @@
 <%
 	Users user = (Users) session.getAttribute("user");
 	Genre_Service genre_Service = new Genre_Service();
-	List<Genre> listGenre = genre_Service.getallMovie(request);
+	List<Genre> listGenre = genre_Service.getallGenre(request);
     Movie_Service ms = new Movie_Service();	
     Movie topView = ms.getTopView(request);
 %>
@@ -50,6 +50,7 @@
                             <a href="#">Mới ra mắt</a>
                             <a href="#">Diễn viên nỗi tiếng</a>
                             <a href="#">Hollywood</a>
+                            <a href="${pageContext.request.contextPath}/views/addMovie.jsp">Thêm Phim</a>
                         </div>
                     </li>
                 </ul>

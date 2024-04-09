@@ -23,7 +23,7 @@ public class Genre_Service {
 	JsonObject jsonObject = new JsonObject();
 	AsmUtils<Genre> asmUtils = new AsmUtils<Genre>();
 	// Các Service khác
-	public List<Genre> getallMovie(HttpServletRequest req) {
+	public List<Genre> getallGenre(HttpServletRequest req) {
 		String urlApi = "http://localhost:8080/"+contextPath.getContextpath()+"/api/genre/getall";
 		System.out.println(asmUtils.callAPI_List(urlApi, Genre.class,"get"));
 		return asmUtils.callAPI_List(urlApi, Genre.class,"get");
